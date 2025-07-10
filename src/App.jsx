@@ -1,26 +1,33 @@
-import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
+import React from "react";
+import Navbar from "./components/Navbar";
+import ProfileCard from "./components/ProfileCard";
+import Hero from "./components/HeroSection";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Achievements from "./components/Achievements";
+import Contact from "./components/ContactForm";
 
-function App() {
+const App = () => {
   return (
-    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-      <header className="py-6 bg-gray-100 dark:bg-gray-800 shadow-md text-center">
-        <h1 className="text-4xl font-bold">My Portfolio</h1>
-      </header>
+    <div className="bg-dark text-white font-poppins min-h-screen">
+      <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-      </main>
+      {/* Main Content Layout */}
+      <div className="container mx-auto px-4 pt-32 lg:pl-[360px]">
+        {/* Profile Card (fixed on large screens) */}
+        <ProfileCard />
 
-      <footer className="text-center py-6 bg-gray-100 dark:bg-gray-800">
-        <p className="text-sm">&copy; 2025 Hasifa Sherin. All rights reserved.</p>
-      </footer>
+        {/* Main sections */}
+        <div className="space-y-20">
+          <Hero />
+          <Projects />
+          <Skills />
+          <Achievements />
+          <Contact />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

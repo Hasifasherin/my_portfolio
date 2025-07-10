@@ -1,12 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",               // Vite entry point
-    "./src/**/*.{js,ts,jsx,tsx}", // All React files
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',              // Enables dark mode using 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#6c5c9d',      
+        accent: '#a18cd1',      
+        dark: '#0f022e',        
+        textLight: '#ffffff',
+        secondary: '#6a89a7',
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
