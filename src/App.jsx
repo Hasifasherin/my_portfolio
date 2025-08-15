@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="bg-dark text-white font-poppins min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 pt-32 lg:pl-[360px]">
+      <div className="container mx-auto px-4 pt-32 lg:pl-[449px]">
         <ProfileCard />
         <div className="space-y-20">
           <Hero />
