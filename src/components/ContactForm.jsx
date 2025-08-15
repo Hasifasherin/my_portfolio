@@ -2,7 +2,7 @@ export default function ContactForm() {
   return (
     <section id="contact" className="pt-16 scroll-mt-28">
       <h1 className="text-3xl font-bold mb-8">
-        Let's Create Something <span className="text-purple-300">Amazing!</span>
+        Let's Create Something <span className="text-purple-300">Amazing! </span>
       </h1>
       <form className="bg-[#6c5c9d] border-2 border-[#6a89a7] rounded-lg p-6 shadow max-w-lg">
         <input

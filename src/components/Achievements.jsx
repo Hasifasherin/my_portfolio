@@ -3,7 +3,7 @@ export default function Achievements() {
     {
       title: 'IoT Coordinator – INNOVI8 IT Expo',
       desc:
-        'Led IoT workshop & project demos for students; enhanced my leadership and teamwork skills.',
+        'Led IoT workshop & project demo for students; enhanced my leadership and teamwork skills.',
     },
     {
       title: 'Coordinator – Audiobook Launch (2022)',
