@@ -3,7 +3,9 @@ import Navbar from "./components/Navbar";
 import ProfileCard from "./components/ProfileCard";
 import Hero from "./components/HeroSection";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience"; 
 import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
 import Achievements from "./components/Achievements";
 import ContactForm from "./components/ContactForm";
 
@@ -16,6 +18,8 @@ const App = () => {
         <div className="space-y-20">
           <Hero />
           <Projects />
+          <Experience /> 
+          <Certifications />
           <Skills />
           <Achievements />
           <ContactForm />
