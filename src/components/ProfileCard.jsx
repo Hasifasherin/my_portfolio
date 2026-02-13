@@ -24,7 +24,7 @@ const ProfileCard = () => {
             <i className="fas fa-envelope"></i>
           </a>
         </div>
-        <a href="/HasifaSherin.pdf" download>
+        <a href="/HASIFA-SHERIN-CP-CV.pdf" download>
           <button className="mt-6 bg-white text-black px-6 py-2 rounded-full text-base font-medium hover:scale-105 transition">
             Download CV <i className="fas fa-download ml-1"></i>
           </button>

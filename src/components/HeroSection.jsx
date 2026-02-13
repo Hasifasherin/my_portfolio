@@ -12,7 +12,7 @@ export default function HeroSection() {
         <strong> responsive, scalable, and user-friendly web applications</strong>. Experienced in <strong>IoT projects</strong>, integrating real-time sensor data and developing smart solutions. Passionate about creating <strong>intuitive UI/UX, writing clean, maintainable code, and delivering innovative full-stack solutions</strong> that make a real-world impact.
       </p>
       <div className="mt-6 flex gap-4">
-        <a href="/HasifaSherin.pdf" target="_blank" rel="noreferrer">
+        <a href="/HASIFA-SHERIN-CP-CV.pdf" target="_blank" rel="noreferrer">
           <button className="bg-purple-400 text-white px-6 py-2 rounded-full hover:bg-purple-500 transition">
             View Resume
           </button>
