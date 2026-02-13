@@ -18,7 +18,7 @@ export default function Experience() {
   return (
     <section id="experience" className="pt-16 scroll-mt-28">
       <h1 className="text-3xl font-bold mb-8">
-        My <span className="text-purple-300">Experience</span>
+         <span className="text-purple-300">Experience</span>
       </h1>
       {experiences.length === 0 ? (
         <p className="text-gray-300 text-center">No experience yet.</p>

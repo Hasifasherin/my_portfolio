@@ -21,6 +21,12 @@ export default function Projects() {
       desc: 'Full-stack online bookstore with admin, buyer, and seller roles. Implemented RBAC, banner control, book reviews, and responsive UI using React.js, Node.js, Express.js, MongoDB, and RESTful APIs.',
       link: 'https://book-store-frontend-xi-blush.vercel.app',
     },
+    {
+  title: 'GoVista – Tour & Activity Booking Platform',
+  desc: 'Full-stack travel platform built with React.js, Next.js, Node.js, Express.js, and MongoDB. Features three roles (Admin, Operator, User), tour listings, search & filter, booking management, reviews, notifications, and optional payment integration with Stripe. Designed for responsive, user-friendly experiences worldwide.',
+  link: 'https://govistas-frontend-qmj5.vercel.app', 
+}
+
   ];
 
   return (

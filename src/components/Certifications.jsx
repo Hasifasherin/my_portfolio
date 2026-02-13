@@ -17,7 +17,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="pt-16 scroll-mt-28">
       <h1 className="text-3xl font-bold mb-8">
-        My <span className="text-purple-300">Certifications</span>
+         <span className="text-purple-300">Certifications</span>
       </h1>
       <div className="flex flex-col gap-6">
         {certifications.map((cert, index) => (
