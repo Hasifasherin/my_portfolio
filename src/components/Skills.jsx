@@ -1,70 +1,86 @@
-import { useState } from 'react';
+import { FaCode, FaServer, FaLaptopCode, FaMicrochip, FaPalette, FaPeopleArrows } from 'react-icons/fa6';
 
 export default function Skills() {
-  const allSkills = [
-    { name: 'JavaScript (ES6+)', icon: '🟨', desc: 'Programming Language' },
-    { name: 'HTML5', icon: '🟧', desc: 'Markup Language' },
-    { name: 'CSS3', icon: '🔵', desc: 'Stylesheet Language' },
-    { name: 'React.js', icon: '⚛️', desc: 'Frontend Library for UI' },
-    { name: 'Next.js', icon: '⏭️', desc: 'React Framework for SSR & Routing' },
-    { name: 'Node.js', icon: '🟩', desc: 'Backend Runtime Environment' },
-    { name: 'Express.js', icon: '🚂', desc: 'Backend Web Framework' },
-    { name: 'MongoDB', icon: '🍃', desc: 'NoSQL Database' },
-    { name: 'RESTful APIs', icon: '🔗', desc: 'Backend Communication' },
-    { name: 'TypeScript', icon: '🔷', desc: 'Typed JavaScript Superset' },
-    { name: 'Redux', icon: '🔁', desc: 'State Management Library' },
-    { name: 'Bootstrap', icon: '💠', desc: 'CSS Framework' },
-    { name: 'Material UI', icon: '📐', desc: 'UI Component Library' },
-    { name: 'Tailwind CSS', icon: '🌬️', desc: 'Utility-First CSS Framework' },
-    { name: 'Responsive Design', icon: '📱', desc: 'Mobile-First Layouts' },
-    { name: 'Arduino', icon: '📟', desc: 'IoT Development' },
-    { name: 'Temperature & Humidity Sensors', icon: '🌡️', desc: 'IoT Sensors' },
-    { name: 'Git/GitHub', icon: '🐙', desc: 'Version Control & Collaboration' },
-    { name: 'VS Code', icon: '🖥️', desc: 'Code Editor' },
-    { name: 'XAMPP', icon: '💻', desc: 'Local Server Environment' },
-    { name: 'Poster Making – Canva', icon: '🎨', desc: 'Design & Graphics' },
-    { name: 'MS Word & Excel', icon: '📄', desc: 'Documentation & Spreadsheets' },
-    { name: 'Typing, Data Entry, Internet Research', icon: '⌨️', desc: 'Productivity & Research' },
+  const categories = [
+    {
+      title: 'Frontend Development',
+      icon: <FaCode className="text-pink-400 w-6 h-6" />,
+      skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Next.js', 'Redux', 'Tailwind CSS', 'Bootstrap', 'Material UI', 'Responsive Design'],
+      bgGradient: 'from-pink-500/10 to-purple-500/10',
+      borderGlow: 'hover:border-pink-500/30'
+    },
+    {
+      title: 'Backend & Databases',
+      icon: <FaServer className="text-blue-400 w-6 h-6" />,
+      skills: ['Node.js', 'Express.js', 'RESTful APIs', 'MongoDB', 'PHP', 'Laravel', 'phpMyAdmin'],
+      bgGradient: 'from-blue-500/10 to-indigo-500/10',
+      borderGlow: 'hover:border-blue-500/30'
+    },
+    {
+      title: 'Tools & Platforms',
+      icon: <FaLaptopCode className="text-emerald-400 w-6 h-6" />,
+      skills: ['Git/GitHub', 'VS Code', 'WAMP', 'Shopify (Theme Customization)'],
+      bgGradient: 'from-emerald-500/10 to-teal-500/10',
+      borderGlow: 'hover:border-emerald-500/30'
+    },
+    {
+      title: 'IoT & Embedded Systems',
+      icon: <FaMicrochip className="text-amber-400 w-6 h-6" />,
+      skills: ['Arduino', 'Temperature & Humidity Sensors'],
+      bgGradient: 'from-amber-500/10 to-orange-500/10',
+      borderGlow: 'hover:border-amber-500/30'
+    },
+    {
+      title: 'Design & UI/UX',
+      icon: <FaPalette className="text-purple-400 w-6 h-6" />,
+      skills: ['Figma (Basic)', 'Canva', 'Cross-Browser Compatibility'],
+      bgGradient: 'from-purple-500/10 to-violet-500/10',
+      borderGlow: 'hover:border-purple-500/30'
+    },
+    {
+      title: 'Soft Skills',
+      icon: <FaPeopleArrows className="text-rose-400 w-6 h-6" />,
+      skills: ['Communication', 'Collaboration', 'Problem Solving', 'Adaptability', 'Time Management'],
+      bgGradient: 'from-rose-500/10 to-red-500/10',
+      borderGlow: 'hover:border-rose-500/30'
+    }
   ];
 
-  const [visibleCount, setVisibleCount] = useState(9);
-
-  const handleToggle = () => {
-    if (visibleCount === 9) {
-      setVisibleCount(allSkills.length);
-    } else {
-      setVisibleCount(9);
-    }
-  };
-
   return (
-    <section id="skill" className="pt-16 scroll-mt-28">
-      <h1 className="text-3xl font-bold mb-8">
-        Top-Tier Tools for <span className="text-purple-300">Exceptional Results</span>
-      </h1>
-      <div className="grid md:grid-cols-3 gap-6">
-        {allSkills.slice(0, visibleCount).map((skill, index) => (
+    <section id="skill" className="pt-20 scroll-mt-28">
+      <h2 className="text-3xl font-bold mb-10 text-white flex items-center gap-3">
+        <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
+          Skills & Technical Expertise
+        </span>
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {categories.map((cat, index) => (
           <div
             key={index}
-            className="bg-[#3b2f5e] text-white p-6 rounded-xl flex items-center gap-4 hover:scale-105 transition shadow"
+            className={`bg-gradient-to-br ${cat.bgGradient} bg-[#190f38]/60 border border-purple-500/10 ${cat.borderGlow} rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm`}
           >
-            <div className="bg-[#2a2344] w-12 h-12 rounded-full flex items-center justify-center text-lg">
-              {skill.icon}
+            {/* Category Header */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-[#24174d] p-3 rounded-xl shadow-inner border border-purple-500/10">
+                {cat.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">{cat.title}</h3>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold">{skill.name}</h3>
-              <p className="text-sm text-gray-300">{skill.desc}</p>
+
+            {/* Badges Grid */}
+            <div className="flex flex-wrap gap-2.5">
+              {cat.skills.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-[#21163e]/80 border border-purple-500/15 hover:border-purple-400/40 text-purple-200 text-xs sm:text-sm px-3.5 py-1.5 rounded-xl font-medium tracking-wide transition duration-200 cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         ))}
-      </div>
-      <div className="text-center mt-6">
-        <button
-          onClick={handleToggle}
-          className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition"
-        >
-          {visibleCount === 9 ? 'View More' : 'View Less'}
-        </button>
       </div>
     </section>
   );
