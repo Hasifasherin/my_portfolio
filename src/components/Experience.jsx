@@ -1,4 +1,6 @@
-export default function Experience() {
+import { themes } from "../theme";
+
+export default function Experience({ theme = themes.purple }) {
   const experiences = [
     {
       role: 'MERN Stack Developer Intern',
@@ -29,30 +31,49 @@ export default function Experience() {
     }
   ];
 
+  // Helper for border and dot colors based on active theme
+  const getDotBorderColor = (id) => {
+    switch (id) {
+      case "cyan": return "border-cyan-500";
+      case "emerald": return "border-emerald-500";
+      case "amber": return "border-amber-500";
+      default: return "border-purple-500";
+    }
+  };
+
+  const getDotBgColor = (id) => {
+    switch (id) {
+      case "cyan": return "bg-cyan-500";
+      case "emerald": return "bg-emerald-500";
+      case "amber": return "bg-amber-500";
+      default: return "bg-purple-500";
+    }
+  };
+
   return (
     <section id="experience" className="pt-20 scroll-mt-28">
       {/* Experience Title */}
       <h2 className="text-3xl font-bold mb-10 text-white flex items-center gap-3">
-        <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">Professional Experience</span>
+        <span className={`bg-gradient-to-r ${theme.gradientText} bg-clip-text text-transparent`}>Professional Experience</span>
       </h2>
 
       {/* Experience Timeline */}
-      <div className="relative border-l border-purple-500/20 ml-4 pl-8 space-y-12">
+      <div className={`relative border-l ${theme.border} ml-4 pl-8 space-y-12`}>
         {experiences.map((exp, index) => (
           <div key={index} className="relative group">
             {/* Timeline Dot */}
-            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#150a30] border-2 border-purple-500 flex items-center justify-center group-hover:border-indigo-400 transition duration-300">
-              <div className="w-2.5 h-2.5 rounded-full bg-purple-500 group-hover:bg-indigo-400 transition duration-300"></div>
+            <div className={`absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#030014] border-2 ${getDotBorderColor(theme.id)} flex items-center justify-center transition duration-300`}>
+              <div className={`w-2.5 h-2.5 rounded-full ${getDotBgColor(theme.id)} transition duration-300`}></div>
             </div>
 
             {/* Experience Card */}
-            <div className="bg-[#21163e]/55 border border-purple-500/10 p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-purple-500/5 hover:border-purple-500/20 transition-all duration-300 backdrop-blur-sm">
+            <div className={`bg-[#0c0a1f]/55 border ${theme.border} p-6 sm:p-8 rounded-2xl shadow-xl hover:${theme.shadow} ${theme.borderHover} transition-all duration-300 backdrop-blur-sm`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition duration-300">{exp.role}</h3>
-                  <p className="text-purple-400 font-medium text-sm mt-1">{exp.company}</p>
+                  <h3 className={`text-xl font-bold text-white group-hover:${theme.text} transition duration-300`}>{exp.role}</h3>
+                  <p className={`${theme.text} font-medium text-sm mt-1`}>{exp.company}</p>
                 </div>
-                <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 self-start sm:self-auto">
+                <span className={`text-xs font-medium px-3 py-1.5 rounded-full ${theme.bgMuted} ${theme.text} border ${theme.border} self-start sm:self-auto`}>
                   {exp.duration}
                 </span>
               </div>
@@ -60,7 +81,7 @@ export default function Experience() {
               <ul className="space-y-2.5 text-white/70 text-sm list-none pl-0">
                 {exp.responsibilities.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
-                    <span className="text-purple-400 mt-1.5 text-xs">◆</span>
+                    <span className={`${theme.text} mt-1.5 text-xs`}>◆</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -73,28 +94,28 @@ export default function Experience() {
       {/* Education Subsection */}
       <div className="mt-20">
         <h2 className="text-3xl font-bold mb-10 text-white flex items-center gap-3">
-          <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">Education</span>
+          <span className={`bg-gradient-to-r ${theme.gradientText} bg-clip-text text-transparent`}>Education</span>
         </h2>
 
-        <div className="relative border-l border-purple-500/20 ml-4 pl-8">
+        <div className={`relative border-l ${theme.border} ml-4 pl-8`}>
           <div className="relative group">
             {/* Timeline Dot */}
-            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#150a30] border-2 border-purple-500 flex items-center justify-center group-hover:border-indigo-400 transition duration-300">
-              <div className="w-2.5 h-2.5 rounded-full bg-purple-500 group-hover:bg-indigo-400 transition duration-300"></div>
+            <div className={`absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#030014] border-2 ${getDotBorderColor(theme.id)} flex items-center justify-center transition duration-300`}>
+              <div className={`w-2.5 h-2.5 rounded-full ${getDotBgColor(theme.id)} transition duration-300`}></div>
             </div>
 
             {/* Education Card */}
-            <div className="bg-[#21163e]/55 border border-purple-500/10 p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-purple-500/5 hover:border-purple-500/20 transition-all duration-300 backdrop-blur-sm">
+            <div className={`bg-[#0c0a1f]/55 border ${theme.border} p-6 sm:p-8 rounded-2xl shadow-xl hover:${theme.shadow} ${theme.borderHover} transition-all duration-300 backdrop-blur-sm`}>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition duration-300">
+                  <h3 className={`text-xl font-bold text-white group-hover:${theme.text} transition duration-300`}>
                     Bachelor of Science in Computer Science
                   </h3>
-                  <p className="text-purple-400 font-medium text-sm mt-1">
+                  <p className={`${theme.text} font-medium text-sm mt-1`}>
                     KAHM Unity Women’s College, Manjeri
                   </p>
                 </div>
-                <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 self-start sm:self-auto">
+                <span className={`text-xs font-medium px-3 py-1.5 rounded-full ${theme.bgMuted} ${theme.text} border ${theme.border} self-start sm:self-auto`}>
                   2022 – 2025
                 </span>
               </div>

@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* Reset and consistency */
   * {
     margin: 0;
     padding: 0;
@@ -11,13 +10,83 @@
   }
 
   html {
-    overflow-y: scroll; /* Prevent scrollbar jump differences */
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: clip;
   }
 
   body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background-color: #030014;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7em;
+    overflow-x: clip;
+  }
+
+  /* Custom high-readability headings */
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
-    background-color: #1a1a1a; /* Dark theme background */
-    -webkit-font-smoothing: antialiased; /* Smooth text in Chrome/Safari */
-    -moz-osx-font-smoothing: grayscale;  /* Smooth text in Firefox/Edge */
+    font-weight: 700;
+    line-height: 1.3em;
+    letter-spacing: -0.02em;
+  }
+
+  /* Glassmorphism scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030014;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 }
+
+/* Animation Delay Utilities */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+/* Ensure animation forwards works correctly */
+.fill-mode-forwards {
+  animation-fill-mode: forwards;
+}
+
+/* Perspective settings for 3D card parallax */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* 3D Flip Card Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
